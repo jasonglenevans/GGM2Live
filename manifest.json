@@ -1,0 +1,36 @@
+{
+    "name": "Gvbvdxx Game Maker 2 Live",
+    "description": "Users Can Edit GGM2 Projects In Real Time (requires windows to host server.)",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_icon": {
+            "32": "favicon.png",
+            "16": "favicon.png",
+            "128": "favicon.png",
+            "48": "favicon.png"
+        }
+    },
+    "icons": {
+        "16": "favicon.png",
+        "32": "favicon.png",
+        "48": "favicon.png",
+        "128": "favicon.png"
+    },
+    "content_scripts": [{
+            "matches": ["https://jasonglenevans.github.io/GGM2Comunity/editor/*"],
+            "js": ["./live/load.js"]
+        }
+    ],
+    "web_accessible_resources": [
+		{
+            "matches": ["\u003Call_urls>"],
+            "resources": ["live/liverunner.console.js","live/liverunner.js","live/live.js"]
+        }
+    ],
+    "permissions": [
+    ],
+    "content_security_policy": {
+        "content_security_policy": "script-src 'self' 'unsafe-inline'"
+    }
+}
